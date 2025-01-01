@@ -1,0 +1,5 @@
+FROM frrouting/frr:v8.4.1
+
+COPY ./mamali-1.daemons.conf /etc/frr/daemons
+COPY ./entrypoint.sh /entrypoint.sh
+CMD ["sh", "/entrypoint.sh"]
