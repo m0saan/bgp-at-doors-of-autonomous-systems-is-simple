@@ -1,6 +1,13 @@
 # Makefile to (re)build and clean docker images
 
-all: build
+all: gns3-install build
+
+gns3-install:
+	@echo "Installing GNS3..."
+	sudo add-apt-repository -y ppa:gns3/ppa
+	sudo apt update
+	sudo apt install -y gns3-gui gns3-server
+	@echo "GNS3 installation completed"
 
 build:
 	docker build --file=mamali_host-1 --tag=mamali_host .
