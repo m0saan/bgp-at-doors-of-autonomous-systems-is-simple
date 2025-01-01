@@ -50,4 +50,6 @@ docker-config:
 	sudo systemctl restart docker &&\
 	sleep 2 &&\
 	newgrp docker
+    sudo chmod 666 /var/run/docker.sock
+    sudo systemctl restart docker
 	@echo "Docker configuration completed"
